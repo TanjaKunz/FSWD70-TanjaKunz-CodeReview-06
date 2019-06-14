@@ -16,45 +16,80 @@ class Loc {
   };
 
   display() {
-       return ;
+
+
+      
   };
 };
 
 let zoo = new Loc ("Schönbrunn Zoo", "", "", "", "");
 let gloriette = new Loc ("The Gloriette", "", "", "", "");
-let Ringstrasse = new Loc ("Vienna's Ringstrasse", "", "", "", "");
-let City Hall = new Loc ("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
+let ringstrasse = new Loc ("Vienna's Ringstrasse", "", "", "", "");
+let cityHall = new Loc ("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
 
 
 
 /* ---------- class Restaurant ---------- */
 
-class Restaurant extends Loc { 
-  tel;
-  type;
-  web;
+// class Restaurant extends Loc { 
+//   tel;
+//   type;
+//   web;
 
-  constructor(name, address, ZIP, city, img) {
-    super(name, address, ZIP, city, img);
-    this.tel = tel;
-    this.type = type;
-    this.web = web;
-  };
+//   constructor(name, address, ZIP, city, img, tel, type, web) {
+//     super(name, address, ZIP, city, img);
+//     this.tel = tel;
+//     this.type = type;
+//     this.web = web;
+//   };
 
-  loadRest() {
-    return
-  };
+//   loadRest() {
+//     return
+//   };
 
-  displayRest() {
-    return super.display() + this.loadRest();
-  };
-};
+//   display() {
+//     return super.display() + this.loadRest();
+//   };
+// };
 
-let rest1 = new Restaurant ();
-console.log(bike1.priceBike());
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+
+// console.log();
 
 
 
+/* ---------- class Event ---------- */
+
+// class Events extends Loc { 
+//   date;
+//   time;
+//   price;
+
+//   constructor(name, address, ZIP, city, img, date, time, price) {
+//     super(name, address, ZIP, city, img);
+//     this.date = date;
+//     this.time = time;
+//     this.price = price;
+//   };
+
+//   loadEvent() {
+//     return
+//   };
+
+//   display() {
+//     return super.display() + this.loadRest();
+//   };
+// };
+
+// let event1 = new Event ();
+// let event2 = new Event ();
+// let event3 = new Event ();
+// let event4 = new Event ();
+
+// console.log(bike1.priceBike());
 
 
 

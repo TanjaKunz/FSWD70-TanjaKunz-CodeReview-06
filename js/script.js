@@ -13,27 +13,61 @@ var Loc = /** @class */ (function () {
         this.img = img;
     }
     ;
-    Loc.prototype.loadL = function () {
-        return;
+    Loc.prototype.display = function () {
     };
     ;
     return Loc;
 }());
 ;
-/* ---------- class Sight ---------- */
-// class Sight extends Location { 
-//    handlebar;
-//    bell;
-//    constructor(topSpeed, size, wheels, seats, img, handlebar, bell) {
-//        super(topSpeed, size, wheels, seats, img);
-//        this.handlebar = handlebar;
-//        this.bell = bell;
-//    }
-//    priceBike() {
-//        return super.priceBySeat() + this.surchargeBike();
-//    }
-// }
-// let bike1 = new Bike ("25", "small", "2", "1", "img/bike.jpg", "1", true);
+var zoo = new Loc("Schönbrunn Zoo", "", "", "", "");
+var gloriette = new Loc("The Gloriette", "", "", "", "");
+var ringstrasse = new Loc("Vienna's Ringstrasse", "", "", "", "");
+var cityHall = new Loc("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
+/* ---------- class Restaurant ---------- */
+// class Restaurant extends Loc { 
+//   tel;
+//   type;
+//   web;
+//   constructor(name, address, ZIP, city, img, tel, type, web) {
+//     super(name, address, ZIP, city, img);
+//     this.tel = tel;
+//     this.type = type;
+//     this.web = web;
+//   };
+//   loadRest() {
+//     return
+//   };
+//   display() {
+//     return super.display() + this.loadRest();
+//   };
+// };
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// console.log();
+/* ---------- class Event ---------- */
+// class Events extends Loc { 
+//   date;
+//   time;
+//   price;
+//   constructor(name, address, ZIP, city, img, date, time, price) {
+//     super(name, address, ZIP, city, img);
+//     this.date = date;
+//     this.time = time;
+//     this.price = price;
+//   };
+//   loadEvent() {
+//     return
+//   };
+//   display() {
+//     return super.display() + this.loadRest();
+//   };
+// };
+// let event1 = new Event ();
+// let event2 = new Event ();
+// let event3 = new Event ();
+// let event4 = new Event ();
 // console.log(bike1.priceBike());
 // var box = document.getElementById('box');
 // var data = [bike1, motorbike1, car1,caravan1];
