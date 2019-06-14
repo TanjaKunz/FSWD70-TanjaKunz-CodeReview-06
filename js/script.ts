@@ -1,5 +1,6 @@
 var main = document.getElementById('main');
 
+
 /* ---------- basic Class ---------- */
 class Loc {
   category = "";
@@ -25,31 +26,54 @@ class Loc {
 
     /* ---------- Image ---------- */
     var image = document.createElement("div");
-    image.classList.add('col-12', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+    image.classList.add('col-lg-12', 'col-md-6', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
 
     var pic = document.createElement("img");
     pic.classList.add('img-fluid');
     pic.setAttribute('src', this.img);
     pic.setAttribute('alt', this.name);
-
-    image.appendChild(pic);   
+    image.appendChild(pic);
 
     box.appendChild(image);
 
+    /* ---------- Info Box ---------- */
+    var info = document.createElement("div");
+    info.classList.add('col-lg-12', 'col-md-6', 'col-sm-12', 'p-lg-0', 'px-md-3', 'info');
+
+    box.appendChild(info);
+
     /* ---------- Title ---------- */
     var title = document.createElement("div");
-    title.classList.add('col-12', 'p-0', 'h5', 'title');
+    title.classList.add('col-12', 'p-0', 'h4', 'title');
 
     var nodeName = document.createTextNode(this.name);
     title.appendChild(nodeName);
 
-    box.appendChild(title);
+    info.appendChild(title);
+
+    var line = document.createElement("hr");
+    line.classList.add('col-12', 'my-0', 'px-0', 'py-1', 'hr');
+    info.appendChild(line);
+
+    /* ---------- Address ---------- */
+    var street = document.createElement("p");
+    street.classList.add('col-12', 'm-0', 'p-0', 'street');
+
+    var nodeStreet = document.createTextNode(this.address);
+    street.appendChild(nodeStreet);
+
+    info.appendChild(street);
 
 
+    var town = document.createElement("p");
+    town.classList.add('col-12', 'm-0', 'p-0', 'town');
 
+    var nodeTown = document.createTextNode(this.ZIP + ' ' + this.city);
+    town.appendChild(nodeTown);
 
+    info.appendChild(town);
 
-      
+    return info;     
   };
 };
 
@@ -58,44 +82,51 @@ let gloriette = new Loc ("Sight", "The Gloriette", "", "", "", "");
 let ringstrasse = new Loc ("Sight", "Vienna's Ringstrasse", "", "", "", "");
 let cityHall = new Loc ("Sight", "City Hall", "Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
 
-var arr = [zoo, gloriette, ringstrasse, cityHall];
 
-console.log(arr);
+
+/* ---------- class Restaurant ---------- */
+
+class Restaurant extends Loc { 
+  tel;
+  type;
+  web;
+
+  constructor(category, name, address, ZIP, city, img, tel, type, web) {
+    super(category, name, address, ZIP, city, img);
+    this.tel = tel;
+    this.type = type;
+    this.web = web;
+  };
+
+  
+
+  displayRest() {
+    super.display();
+
+    var tel = document.createElement("p");
+    tel.classList.add('col-12', 'm-0', 'p-0', 'tel');
+
+    var nodeTel = document.createTextNode(this.address);
+    tel.appendChild(nodeTel);
+
+    // var info = (Loc.(this.box)).find(); '''''''''''''''''''''''''''''''''
+    // info.appendChild(tel);
+    
+  };
+};
+
+let rest1 = new Restaurant ("", "Zhany", "Schwarzenbergplatz", "1040", "Vienna", "", "01 sdfs", "Asian", "www.zhany.at");
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+// let rest1 = new Restaurant ();
+
+
+var arr = [zoo, gloriette, ringstrasse, cityHall, rest1];
+
 
 for (let i = 0; i < arr.length; i++) {
   arr[i].display();
 };
-
-/* ---------- class Restaurant ---------- */
-
-// class Restaurant extends Loc { 
-//   tel;
-//   type;
-//   web;
-
-//   constructor(category, name, address, ZIP, city, img, tel, type, web) {
-//     super(category, name, address, ZIP, city, img);
-//     this.tel = tel;
-//     this.type = type;
-//     this.web = web;
-//   };
-
-//   loadRest() {
-//     return
-//   };
-
-//   display() {
-//     return super.display() + this.loadRest();
-//   };
-// };
-
-// let rest1 = new Restaurant ();
-// let rest1 = new Restaurant ();
-// let rest1 = new Restaurant ();
-// let rest1 = new Restaurant ();
-
-// console.log();
-
 
 
 /* ---------- class Event ---------- */
@@ -104,21 +135,17 @@ for (let i = 0; i < arr.length; i++) {
 //   date;
 //   time;
 //   price;
+//   webPage;
 
-//   constructor(category, name, address, ZIP, city, img, date, time, price) {
+//   constructor(category, name, address, ZIP, city, img, date, time, price, webPage) {
 //     super(category, name, address, ZIP, city, img);
 //     this.date = date;
 //     this.time = time;
 //     this.price = price;
+//     this.webPage = webPage;
 //   };
 
-//   loadEvent() {
-//     return
-//   };
-
-//   display() {
-//     return super.display() + this.loadRest();
-//   };
+//   
 // };
 
 // let event1 = new Event ();
