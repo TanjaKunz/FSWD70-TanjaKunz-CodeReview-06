@@ -1,33 +1,70 @@
-/* ---------- basic Class ---------- */
+var main = document.getElementById('main');
 
+/* ---------- basic Class ---------- */
 class Loc {
+  category = "";
   name = "";
  	address = "";
  	ZIP ="";
   city = "";
  	img = "" 
 
-	constructor(name, address, ZIP, city, img) { 
-       this.name = name;
-       this.address = address;
-       this.ZIP = ZIP;
-       this.city = city;
-       this.img = img;
+	constructor(category, name, address, ZIP, city, img) { 
+    this.category = category;
+    this.name = name;
+    this.address = address;
+    this.ZIP = ZIP;
+    this.city = city;
+    this.img = img;
   };
 
   display() {
+    var box = document.createElement("div");
+    box.classList.add('col-lg-3', 'col-md-6', 'col-sm-12', 'py-3', 'h5', 'd-flex', 'flex-wrap', 'box');   
+    main.appendChild(box);
+
+    /* ---------- Image ---------- */
+    var image = document.createElement("div");
+    image.classList.add('col-12', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+
+    var pic = document.createElement("img");
+    pic.classList.add('img-fluid');
+    pic.setAttribute('src', this.img);
+    pic.setAttribute('alt', this.name);
+
+    image.appendChild(pic);   
+
+    box.appendChild(image);
+
+    /* ---------- Title ---------- */
+    var title = document.createElement("div");
+    title.classList.add('col-12', 'p-0', 'h5', 'title');
+
+    var nodeName = document.createTextNode(this.name);
+    title.appendChild(nodeName);
+
+    box.appendChild(title);
+
+
+
 
 
       
   };
 };
 
-let zoo = new Loc ("Schönbrunn Zoo", "", "", "", "");
-let gloriette = new Loc ("The Gloriette", "", "", "", "");
-let ringstrasse = new Loc ("Vienna's Ringstrasse", "", "", "", "");
-let cityHall = new Loc ("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
+let zoo = new Loc ("Sight", "Schönbrunn Zoo", "", "", "", "");
+let gloriette = new Loc ("Sight", "The Gloriette", "", "", "", "");
+let ringstrasse = new Loc ("Sight", "Vienna's Ringstrasse", "", "", "", "");
+let cityHall = new Loc ("Sight", "City Hall", "Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
 
+var arr = [zoo, gloriette, ringstrasse, cityHall];
 
+console.log(arr);
+
+for (let i = 0; i < arr.length; i++) {
+  arr[i].display();
+};
 
 /* ---------- class Restaurant ---------- */
 
@@ -36,8 +73,8 @@ let cityHall = new Loc ("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vien
 //   type;
 //   web;
 
-//   constructor(name, address, ZIP, city, img, tel, type, web) {
-//     super(name, address, ZIP, city, img);
+//   constructor(category, name, address, ZIP, city, img, tel, type, web) {
+//     super(category, name, address, ZIP, city, img);
 //     this.tel = tel;
 //     this.type = type;
 //     this.web = web;
@@ -68,8 +105,8 @@ let cityHall = new Loc ("City Hall", " Friedrich-Schmidt-Platz 1", "1010", "Vien
 //   time;
 //   price;
 
-//   constructor(name, address, ZIP, city, img, date, time, price) {
-//     super(name, address, ZIP, city, img);
+//   constructor(category, name, address, ZIP, city, img, date, time, price) {
+//     super(category, name, address, ZIP, city, img);
 //     this.date = date;
 //     this.time = time;
 //     this.price = price;
