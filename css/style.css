@@ -1,3 +1,11 @@
+#header {
+  height: 75px;
+  background-color: #1c375b; }
 
+nav, footer {
+  background-color: #a4d3ee; }
+
+main {
+  margin-top: 131px; }
 
 /*# sourceMappingURL=style.css.map */

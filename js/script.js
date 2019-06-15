@@ -66,7 +66,6 @@ var Loc = /** @class */ (function () {
         var nodeTown = document.createTextNode(this.ZIP + ' ' + this.city);
         town.appendChild(nodeTown);
         info.appendChild(town);
-        return info;
     };
     ;
     return Loc;
@@ -91,16 +90,16 @@ var Restaurant = /** @class */ (function (_super) {
         _super.prototype.display.call(this);
         var tel = document.createElement("p");
         tel.classList.add('col-12', 'm-0', 'p-0', 'tel');
-        var nodeTel = document.createTextNode(this.address);
+        var nodeTel = document.createTextNode('Tel:' + this.tel);
         tel.appendChild(nodeTel);
+        info.appendChild(tel);
         // var info = (Loc.(this.box)).find(); '''''''''''''''''''''''''''''''''
-        // info.appendChild(tel);
     };
     ;
     return Restaurant;
 }(Loc));
 ;
-var rest1 = new Restaurant("", "Zhany", "Schwarzenbergplatz", "1040", "Vienna", "", "01 sdfs", "Asian", "www.zhany.at");
+var rest1 = new Restaurant("", "Zhany", "Schwarzenbergplatz", "1040", "Vienna", "img/zhany.jpg", "01 504 15 25", "Asian", "www.zhany.at");
 // let rest1 = new Restaurant ();
 // let rest1 = new Restaurant ();
 // let rest1 = new Restaurant ();

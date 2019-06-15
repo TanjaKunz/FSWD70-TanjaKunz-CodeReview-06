@@ -72,9 +72,10 @@ class Loc {
     town.appendChild(nodeTown);
 
     info.appendChild(town);
-
-    return info;     
+     
   };
+
+  
 };
 
 let zoo = new Loc ("Sight", "Schönbrunn Zoo", "", "", "", "");
@@ -103,19 +104,23 @@ class Restaurant extends Loc {
   displayRest() {
     super.display();
 
+    
+
     var tel = document.createElement("p");
     tel.classList.add('col-12', 'm-0', 'p-0', 'tel');
 
-    var nodeTel = document.createTextNode(this.address);
+    var nodeTel = document.createTextNode('Tel:' + this.tel);
     tel.appendChild(nodeTel);
 
+    info.appendChild(tel);
+
     // var info = (Loc.(this.box)).find(); '''''''''''''''''''''''''''''''''
-    // info.appendChild(tel);
+    
     
   };
 };
 
-let rest1 = new Restaurant ("", "Zhany", "Schwarzenbergplatz", "1040", "Vienna", "", "01 sdfs", "Asian", "www.zhany.at");
+let rest1 = new Restaurant ("", "Zhany", "Schwarzenbergplatz", "1040", "Vienna", "img/zhany.jpg", "01 504 15 25", "Asian", "www.zhany.at");
 // let rest1 = new Restaurant ();
 // let rest1 = new Restaurant ();
 // let rest1 = new Restaurant ();
