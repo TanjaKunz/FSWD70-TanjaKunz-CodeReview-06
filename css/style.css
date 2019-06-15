@@ -8,4 +8,12 @@ nav, footer {
 main {
   margin-top: 131px; }
 
+.box .img {
+  height: 15vw;
+  overflow: hidden; }
+.box h4 {
+  font-size: 110%; }
+.box p {
+  font-size: 100%; }
+
 /*# sourceMappingURL=style.css.map */

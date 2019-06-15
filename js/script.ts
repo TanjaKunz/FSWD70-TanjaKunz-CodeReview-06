@@ -21,7 +21,7 @@ class Loc {
   display() {
     let content = `
       <div class="col-lg-3 col-md-6 col-sm-12 py-3 h5 d-flex flex-wrap box">
-        <div class="col-lg-12 col-md-6 p-0 d-lg-block d-md-block d-sm-none img">
+        <div class="col-lg-12 col-md-6 mb-3 p-0 d-none d-lg-block d-md-block img">
           <img class="img-fluid" src="${this.img}" alt="${this.name}">
         </div>
 
@@ -39,9 +39,9 @@ class Loc {
   };  
 };
 
-let zoo = new Loc ("Sight", "Zoo Schönbrunn", "Schönbrunner Schlosspark", "1130", "Vienna", "img/schoenbrunn.jpg");
-// let gloriette = new Loc ("Sight", "The Gloriette", "", "", "", "");
-// let ringstrasse = new Loc ("Sight", "Vienna's Ringstrasse", "", "", "", "");
+let zoo = new Loc ("Sight", "Zoo Schönbrunn", "Maxingstraße 13b", "1130", "Vienna", "img/schoenbrunn.jpg");
+let gloriette = new Loc ("Sight", "The Gloriette", "Schönbrunner Schlossstraße", "1130", "Vienna", "img/gloriette.jpg");
+let library = new Loc ("Sight", "Austrian National Library", "Josefsplatz 1", "1010", "Vienna", "img/library.jpg");
 let cityHall = new Loc ("Sight", "City Hall", "Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
 
 
@@ -67,7 +67,7 @@ class Restaurant extends Loc {
 
     /* ---------- Image ---------- */
     var image = document.createElement("div");
-    image.classList.add('col-lg-12', 'col-md-6', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+    image.classList.add('col-lg-12', 'col-md-6', 'mb-3', 'p-0', 'd-none', 'd-lg-block', 'd-md-block', 'img');
 
     var pic = document.createElement("img");
     pic.classList.add('img-fluid');
@@ -167,7 +167,7 @@ class Events extends Loc {
 
     /* ---------- Image ---------- */
     var image = document.createElement("div");
-    image.classList.add('col-lg-12', 'col-md-6', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+    image.classList.add('col-lg-12', 'col-md-6', 'mb-3', 'p-0', 'd-none', 'd-lg-block', 'd-md-block', 'img');
 
     var pic = document.createElement("img");
     pic.classList.add('img-fluid');
@@ -242,7 +242,7 @@ class Events extends Loc {
 
 // category, name, address, ZIP, city, img, date, time, price, webPage 
 
-let event1 = new Events ("Event", "A Tribute To Vienna Sängerknaben 2019", "Michaelerplatz 1", "1010", "Vienna", "img/hofreitschule01.png", "21.6.2019", "19:00", "starting from  € 53.00", "https://www.srs.at/en/tickets-events/a-tribute-to-vienna-with-boyschoir-2019/");
+let event1 = new Events ("Event", "A Tribute To Vienna", "Michaelerplatz 1", "1010", "Vienna", "img/hofreitschule01.png", "21.6.2019", "19:00", "starting from  € 53.00", "https://www.srs.at/en/tickets-events/a-tribute-to-vienna-with-boyschoir-2019/");
 // let event2 = new Event ();
 // let event3 = new Event (); 
 // let event4 = new Event ();
@@ -250,7 +250,7 @@ let event1 = new Events ("Event", "A Tribute To Vienna Sängerknaben 2019", "Mic
 
 
 
-var arr = [zoo, cityHall, rest1, event1];
+var arr = [zoo, library, cityHall, gloriette, rest1, event1];
 
 
 for (let i = 0; i < arr.length; i++) {

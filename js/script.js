@@ -30,16 +30,16 @@ var Loc = /** @class */ (function () {
     }
     ;
     Loc.prototype.display = function () {
-        var content = "\n      <div class=\"col-lg-3 col-md-6 col-sm-12 py-3 h5 d-flex flex-wrap box\">\n        <div class=\"col-lg-12 col-md-6 p-0 d-lg-block d-md-block d-sm-none img\">\n          <img class=\"img-fluid\" src=\"" + this.img + "\" alt=\"" + this.name + "\">\n        </div>\n\n        <div class=\"col-lg-12 col-md-6 col-sm-12 p-lg-0 px-md-3 info\">\n          <div class=\"col-12 p-0 h4 title\"> " + this.name + " </div>\n\n          <hr class=\"col-12 my-0 px-0 py-1 hr\">\n\n          <p class=\"col-12 m-0 p-0 street\"> " + this.address + " </p>\n          <p class=\"col-12 m-0 p-0 city\"> " + this.ZIP + " " + this.city + " </p>\n        </div>\n      </div>";
+        var content = "\n      <div class=\"col-lg-3 col-md-6 col-sm-12 py-3 h5 d-flex flex-wrap box\">\n        <div class=\"col-lg-12 col-md-6 mb-3 p-0 d-none d-lg-block d-md-block img\">\n          <img class=\"img-fluid\" src=\"" + this.img + "\" alt=\"" + this.name + "\">\n        </div>\n\n        <div class=\"col-lg-12 col-md-6 col-sm-12 p-lg-0 px-md-3 info\">\n          <div class=\"col-12 p-0 h4 title\"> " + this.name + " </div>\n\n          <hr class=\"col-12 my-0 px-0 py-1 hr\">\n\n          <p class=\"col-12 m-0 p-0 street\"> " + this.address + " </p>\n          <p class=\"col-12 m-0 p-0 city\"> " + this.ZIP + " " + this.city + " </p>\n        </div>\n      </div>";
         main.innerHTML += content;
     };
     ;
     return Loc;
 }());
 ;
-var zoo = new Loc("Sight", "Zoo Schönbrunn", "Schönbrunner Schlosspark", "1130", "Vienna", "img/schoenbrunn.jpg");
-// let gloriette = new Loc ("Sight", "The Gloriette", "", "", "", "");
-// let ringstrasse = new Loc ("Sight", "Vienna's Ringstrasse", "", "", "", "");
+var zoo = new Loc("Sight", "Zoo Schönbrunn", "Maxingstraße 13b", "1130", "Vienna", "img/schoenbrunn.jpg");
+var gloriette = new Loc("Sight", "The Gloriette", "Schönbrunner Schlossstraße", "1130", "Vienna", "img/gloriette.jpg");
+var library = new Loc("Sight", "Austrian National Library", "Josefsplatz 1", "1010", "Vienna", "img/library.jpg");
 var cityHall = new Loc("Sight", "City Hall", "Friedrich-Schmidt-Platz 1", "1010", "Vienna", "img/cityhall.jpg");
 /* ---------- class Restaurant ---------- */
 var Restaurant = /** @class */ (function (_super) {
@@ -58,7 +58,7 @@ var Restaurant = /** @class */ (function (_super) {
         main.appendChild(box);
         /* ---------- Image ---------- */
         var image = document.createElement("div");
-        image.classList.add('col-lg-12', 'col-md-6', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+        image.classList.add('col-lg-12', 'col-md-6', 'mb-3', 'p-0', 'd-none', 'd-lg-block', 'd-md-block', 'img');
         var pic = document.createElement("img");
         pic.classList.add('img-fluid');
         pic.setAttribute('src', this.img);
@@ -131,7 +131,7 @@ var Events = /** @class */ (function (_super) {
         main.appendChild(box);
         /* ---------- Image ---------- */
         var image = document.createElement("div");
-        image.classList.add('col-lg-12', 'col-md-6', 'p-0', 'd-lg-block', 'd-md-block', 'd-sm-none', 'img');
+        image.classList.add('col-lg-12', 'col-md-6', 'mb-3', 'p-0', 'd-none', 'd-lg-block', 'd-md-block', 'img');
         var pic = document.createElement("img");
         pic.classList.add('img-fluid');
         pic.setAttribute('src', this.img);
@@ -183,11 +183,11 @@ var Events = /** @class */ (function (_super) {
 }(Loc));
 ;
 // category, name, address, ZIP, city, img, date, time, price, webPage 
-var event1 = new Events("Event", "A Tribute To Vienna Sängerknaben 2019", "Michaelerplatz 1", "1010", "Vienna", "img/hofreitschule01.png", "21.6.2019", "19:00", "starting from  € 53.00", "https://www.srs.at/en/tickets-events/a-tribute-to-vienna-with-boyschoir-2019/");
+var event1 = new Events("Event", "A Tribute To Vienna", "Michaelerplatz 1", "1010", "Vienna", "img/hofreitschule01.png", "21.6.2019", "19:00", "starting from  € 53.00", "https://www.srs.at/en/tickets-events/a-tribute-to-vienna-with-boyschoir-2019/");
 // let event2 = new Event ();
 // let event3 = new Event (); 
 // let event4 = new Event ();
-var arr = [zoo, cityHall, rest1, event1];
+var arr = [zoo, library, cityHall, gloriette, rest1, event1];
 for (var i = 0; i < arr.length; i++) {
     arr[i].display();
 }
